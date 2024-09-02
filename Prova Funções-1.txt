@@ -1,0 +1,33 @@
+notas = []
+quantidade_notas = int(input("\nInforme a quantidade de notas: "))
+for nota in range(quantidade_notas):
+  nota = float(input(f"Digite a nota {nota + 1} :"))
+  notas.append(nota)
+
+
+
+def calcular_media(notas):
+  if len(notas) == 0:
+    return 0
+
+  media = sum(notas) / len(notas)
+  arredondar_media = round(media,2)
+  return arredondar_media
+
+
+  
+def verificar_situacao(media):
+  if media == 10:
+    return "Parabéns!"
+  elif media >= 7:
+    return "Aprovado!"
+  else:
+    return "Reprovado!"
+
+
+
+media = calcular_media(notas)
+situacao = verificar_situacao(media)
+
+print(f"\nA média do aluno é: {media}")
+print(f"A situação do aluno é: {situacao}")
